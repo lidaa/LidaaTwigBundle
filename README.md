@@ -38,12 +38,17 @@ Installation
 Extensions:
 ============
 
-**PhpExtension** (see documentation)
-**ImageExtension** (see documentation)
-**UrlExtension** (see documentation)
-**CssExtension** (see documentation)
-**JsExtension** (see documentation)
-**TagExtension** (see documentation)
+	**PhpExtension** (see documentation : /Resources/doc/php)
+
+	**ImageExtension** (see documentation /Resources/doc/image)
+
+	**UrlExtension** (see documentation /Resources/doc/url)
+
+	**CssExtension** (see documentation /Resources/doc/css)
+
+	**JsExtension** (see documentation /Resources/doc/js)
+
+	**TagExtension** (see documentation /Resources/doc/tag)
 
 TODO:
 ============

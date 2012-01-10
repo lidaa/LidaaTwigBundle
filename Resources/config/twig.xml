@@ -11,6 +11,7 @@
             <parameter key="twi.extension.tag.class">Lidaa\TwigBundle\Twig\TagExtension</parameter>
             <parameter key="twi.extension.css.class">Lidaa\TwigBundle\Twig\CssExtension</parameter>
             <parameter key="twi.extension.js.class">Lidaa\TwigBundle\Twig\JsExtension</parameter>
+            <parameter key="twi.extension.session.class">Lidaa\TwigBundle\Twig\SessionExtension</parameter>
     </parameters>
         
     <services>
@@ -42,7 +43,11 @@
           <tag name="twig.extension" />
             <argument type="service" id="service_container" />
         </service>
-    
+
+        <service id="twig.extension.session" class="%twi.extension.session.class%">
+          <tag name="twig.extension" />
+        </service>
+
     </services>
 
 </container>

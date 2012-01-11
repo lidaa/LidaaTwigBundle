@@ -50,10 +50,12 @@ Extensions:
 
 	**TagExtension** (see documentation : /Resources/doc/tag)
 
+	**SessionExtension** (see documentation : /Resources/doc/session)
+
+	**NumberExtension** (see documentation : /Resources/doc/number)
+
 TODO:
 ============
-- NumberExtension
-- AjaxExtension
 - Sf2Extension
 - FormExtension
 - Tests

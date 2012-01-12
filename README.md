@@ -54,9 +54,10 @@ Extensions:
 
 	**NumberExtension** (see documentation : /Resources/doc/number)
 
+	**SfExtension** (see documentation : /Resources/doc/sf)
+
 TODO:
 ============
-- Sf2Extension
 - FormExtension
 - Tests
 

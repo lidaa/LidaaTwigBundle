@@ -38,23 +38,23 @@ Installation
 Extensions:
 ============
 
-	**PhpExtension** (see documentation : /Resources/doc/php)
+	- PhpExtension (see documentation : /Resources/doc/php)
 
-	**ImageExtension** (see documentation : /Resources/doc/image)
+	- ImageExtension (see documentation : /Resources/doc/image)
 
-	**UrlExtension** (see documentation : /Resources/doc/url)
+	- UrlExtension (see documentation : /Resources/doc/url)
 
-	**CssExtension** (see documentation : /Resources/doc/css)
+	- CssExtension (see documentation : /Resources/doc/css)
 
-	**JsExtension** (see documentation : /Resources/doc/js)
+	- JsExtension (see documentation : /Resources/doc/js)
 
-	**TagExtension** (see documentation : /Resources/doc/tag)
+	- TagExtension (see documentation : /Resources/doc/tag)
 
-	**SessionExtension** (see documentation : /Resources/doc/session)
+	- SessionExtension (see documentation : /Resources/doc/session)
 
-	**NumberExtension** (see documentation : /Resources/doc/number)
+	- NumberExtension (see documentation : /Resources/doc/number)
 
-	**SfExtension** (see documentation : /Resources/doc/sf)
+	- SfExtension (see documentation : /Resources/doc/sf)
 
 TODO:
 ============

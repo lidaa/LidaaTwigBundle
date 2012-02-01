@@ -1,5 +1,11 @@
 Provides a lot of Twig Extensions.
 
+Requirement
+============
+
+- Twig version 1.5 or later
+- Symfony version 2.0.9 or later
+
 Installation
 ============
 

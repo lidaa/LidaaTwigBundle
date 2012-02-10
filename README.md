@@ -62,9 +62,12 @@ Extensions:
 
 	- SfExtension (see documentation : /Resources/doc/sf)
 
+	- formExtension (see documentation : /Resources/doc/sf)
+
 TODO:
 ============
-- FormExtension
+- Add ajax and highligh to JsExtension
+- Add ajax and highligh to JsExtension
 - Tests
 
 

@@ -49,7 +49,6 @@ class SessionExtension extends \Twig_Extension {
     }
 
     public function sessionLocale() {
-
         return $this->session->getLocale();
     }
 

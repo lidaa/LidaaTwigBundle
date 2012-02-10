@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+            <parameter key="lidaa.form.type.field.class">Lidaa\TwigBundle\Form\Type\FieldType</parameter>
+    </parameters>
+
+    <services>
+        
+        <service id="form.type.field" class="%lidaa.form.type.field.class%">
+            <tag name="form.type" alias="field" />
+            <argument type="service" id="validator" />
+        </service>
+    
+    </services>
+</container>

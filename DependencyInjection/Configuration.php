@@ -4,6 +4,7 @@ namespace Lidaa\TwigBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -20,10 +21,33 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('lidaa_twig');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $this->addFormSection($rootNode);
 
         return $treeBuilder;
+    }
+    
+    private function addFormSection(ArrayNodeDefinition $rootNode)
+    {
+        $rootNode
+            ->children()
+                ->arrayNode('form')
+                    ->addDefaultsIfNotSet()
+                    ->fixXmlConfig('resource')
+                    ->children()
+                        ->arrayNode('resources')
+                            ->addDefaultsIfNotSet()
+                            ->defaultValue(array('LidaaTwigBundle:Form:form_layout.html.twig'))
+                            ->validate()
+                                ->ifTrue(function($v) { return !in_array('LidaaTwigBundle:Form:form_layout.html.twig', $v); })
+                                ->then(function($v){
+                                    return array_merge(array('LidaaTwigBundle:Form:form_layout.html.twig'), $v);
+                                })
+                            ->end()
+                            ->prototype('scalar')->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
     }
 }

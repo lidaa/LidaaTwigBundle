@@ -5,59 +5,70 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-            <parameter key="twi.extension.url.class">Lidaa\TwigBundle\Twig\UrlExtension</parameter>
-            <parameter key="twi.extension.php.class">Lidaa\TwigBundle\Twig\PhpExtension</parameter>
-            <parameter key="twi.extension.image.class">Lidaa\TwigBundle\Twig\ImageExtension</parameter>
-            <parameter key="twi.extension.tag.class">Lidaa\TwigBundle\Twig\TagExtension</parameter>
-            <parameter key="twi.extension.css.class">Lidaa\TwigBundle\Twig\CssExtension</parameter>
-            <parameter key="twi.extension.js.class">Lidaa\TwigBundle\Twig\JsExtension</parameter>
-            <parameter key="twi.extension.session.class">Lidaa\TwigBundle\Twig\SessionExtension</parameter>
-            <parameter key="twi.extension.number.class">Lidaa\TwigBundle\Twig\NumberExtension</parameter>
-            <parameter key="twi.extension.sf.class">Lidaa\TwigBundle\Twig\SfExtension</parameter>
+            <parameter key="lidaa.twig.extension.url.class">Lidaa\TwigBundle\Twig\UrlExtension</parameter>
+            <parameter key="lidaa.twig.extension.php.class">Lidaa\TwigBundle\Twig\PhpExtension</parameter>
+            <parameter key="lidaa.twig.extension.image.class">Lidaa\TwigBundle\Twig\ImageExtension</parameter>
+            <parameter key="lidaa.twig.extension.tag.class">Lidaa\TwigBundle\Twig\TagExtension</parameter>
+            <parameter key="lidaa.twig.extension.css.class">Lidaa\TwigBundle\Twig\CssExtension</parameter>
+            <parameter key="lidaa.twig.extension.js.class">Lidaa\TwigBundle\Twig\JsExtension</parameter>
+            <parameter key="lidaa.twig.extension.session.class">Lidaa\TwigBundle\Twig\SessionExtension</parameter>
+            <parameter key="lidaa.twig.extension.number.class">Lidaa\TwigBundle\Twig\NumberExtension</parameter>
+            <parameter key="lidaa.twig.extension.sf.class">Lidaa\TwigBundle\Twig\SfExtension</parameter>
+            <parameter key="lidaa.twig.extension.form.class">Lidaa\TwigBundle\Twig\FormExtension</parameter>
+            <parameter key="lidaa.twig.extension.unset.class">Lidaa\TwigBundle\Twig\UnsetExtension</parameter>
     </parameters>
         
     <services>
 
-        <service id="twig.extension.url" class="%twi.extension.url.class%">
+        <service id="lidaa.twig.extension.url" class="%lidaa.twig.extension.url.class%">
           <tag name="twig.extension" />
           <argument type="service" id="router" />
         </service>
 
-        <service id="twig.extension.php" class="%twi.extension.php.class%">
+        <service id="lidaa.twig.extension.php" class="%lidaa.twig.extension.php.class%">
           <tag name="twig.extension" />
         </service>
         
-        <service id="twig.extension.image" class="%twi.extension.image.class%">
-          <tag name="twig.extension" />
-            <argument type="service" id="service_container" />
-        </service>
-        
-        <service id="twig.extension.tag" class="%twi.extension.tag.class%">
-          <tag name="twig.extension" />
-        </service>
-        
-        <service id="twig.extension.css" class="%twi.extension.css.class%">
+        <service id="lidaa.twig.extension.image" class="%lidaa.twig.extension.image.class%">
           <tag name="twig.extension" />
             <argument type="service" id="service_container" />
         </service>
         
-        <service id="twig.extension.js" class="%twi.extension.js.class%">
+        <service id="lidaa.twig.extension.tag" class="%lidaa.twig.extension.tag.class%">
+          <tag name="twig.extension" />
+        </service>
+        
+        <service id="lidaa.twig.extension.css" class="%lidaa.twig.extension.css.class%">
+          <tag name="twig.extension" />
+            <argument type="service" id="service_container" />
+        </service>
+        
+        <service id="lidaa.twig.extension.js" class="%lidaa.twig.extension.js.class%">
           <tag name="twig.extension" />
             <argument type="service" id="service_container" />
         </service>
 
-        <service id="twig.extension.session" class="%twi.extension.session.class%">
-          <tag name="twig.extension" />
-        </service>
-
-        <service id="twig.extension.number" class="%twi.extension.number.class%">
+        <service id="lidaa.twig.extension.session" class="%lidaa.twig.extension.session.class%">
           <tag name="twig.extension" />
         </service>    
-        
-        <service id="twig.extension.sf" class="%twi.extension.sf.class%">
-          <tag name="twig.extension" />
-        </service>  
 
+        <service id="lidaa.twig.extension.number" class="%lidaa.twig.extension.number.class%">
+          <tag name="twig.extension" />
+        </service>    
+
+        <service id="lidaa.twig.extension.sf" class="%lidaa.twig.extension.sf.class%">
+          <tag name="twig.extension" />
+        </service>    
+
+        <service id="lidaa.twig.extension.form" class="%lidaa.twig.extension.form.class%">
+          <tag name="twig.extension" />
+            <argument>%lidaa.twig.form.resources%</argument>
+        </service> 
+        
+        <service id="lidaa.twig.extension.unset" class="%lidaa.twig.extension.unset.class%">
+          <tag name="twig.extension" />
+        </service> 
+        
     </services>
 
 </container>

@@ -24,5 +24,9 @@ class LidaaTwigExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('twig.xml');
+        $loader->load('form.xml');
+        
+        $container->setParameter('lidaa.twig.form.resources', $config['form']['resources']);
+        
     }
 }

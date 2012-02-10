@@ -37,6 +37,7 @@ class UrlExtension extends \Twig_Extension {
         
         if(!$condition) return '';
         
+        
         if(!key_exists('href', $options))
             $options['href'] = '#';
 

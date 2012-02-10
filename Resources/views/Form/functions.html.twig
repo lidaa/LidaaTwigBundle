@@ -1,0 +1,14 @@
+
+## display the form from the mode ( default is 'LEW' )
+{% macro display_from_mode(mode, form) %}
+    {% set tab_mode = php_preg_split('//', mode, -1, 1) %}
+    {% for index in tab_mode %}
+        {% if (index|upper == 'L') %}
+            {{ type_label(form) }}
+        {% elseif (index|upper == 'W') %}
+            {{ type_widget(form) }}
+        {% elseif (index|upper == 'E') %}
+            {{ type_errors(form) }}      
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

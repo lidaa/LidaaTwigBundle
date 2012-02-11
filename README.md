@@ -62,7 +62,9 @@ Extensions:
 
 	- SfExtension (see documentation : /Resources/doc/sf)
 
-	- formExtension (see documentation : /Resources/doc/sf)
+	- UnsetExtension (see documentation : /Resources/doc/unset) 
+
+	- formExtension (see documentation : /Resources/doc/form)
 
 TODO:
 ============

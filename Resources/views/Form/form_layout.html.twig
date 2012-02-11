@@ -24,7 +24,7 @@
 {% spaceless %}
     {% if html_widget.suffix is defined %}{{ html_widget.suffix|raw }}{% endif %}
     <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
-    {% if html_widget.preffix is defined %}{{ html_widget.preffix|raw }}{% endif %}
+    {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock textarea_widget %}
 
@@ -70,7 +70,7 @@
         {{ block('widget_choice_options') }}
     </select>
     {% endif %}
-    {% if html_widget.preffix is defined %}{{ html_widget.preffix|raw }}{% endif %}
+    {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock choice_widget %}
 
@@ -78,7 +78,7 @@
 {% spaceless %}
     {% if html_widget.suffix is defined %}{{ html_widget.suffix|raw }}{% endif %}
     <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
-    {% if html_widget.preffix is defined %}{{ html_widget.preffix|raw }}{% endif %}
+    {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock checkbox_widget %}
 
@@ -86,7 +86,7 @@
 {% spaceless %}
     {% if html_widget.suffix is defined %}{{ html_widget.suffix|raw }}{% endif %}
     <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
-    {% if html_widget.preffix is defined %}{{ html_widget.preffix|raw }}{% endif %}
+    {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock radio_widget %}
 
@@ -103,7 +103,7 @@
             {{ type_widget(form.time) }}
         </div>
     {% endif %}
-    {% if html_widget.preffix is defined %}{{ html_widget.preffix|raw }}{% endif %}
+    {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock datetime_widget %}
 
@@ -121,7 +121,7 @@
             })|raw }}
         </div>
     {% endif %}
-    {% if html_widget.preffix is defined %}{{ html_widget.preffix|raw }}{% endif %}
+    {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock date_widget %}
 
@@ -135,7 +135,7 @@
             {{ form_widget(form.hour, { 'attr': { 'size': '1' } }) }}:{{ form_widget(form.minute, { 'attr': { 'size': '1' } }) }}{% if with_seconds %}:{{ form_widget(form.second, { 'attr': { 'size': '1' } }) }}{% endif %}
         </div>
     {% endif %}
-    {% if html_widget.preffix is defined %}{{ html_widget.preffix|raw }}{% endif %}
+    {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock time_widget %}
 
@@ -186,7 +186,7 @@
     {% set type = type|default('text') %}
     {% if html_widget.suffix is defined %}{{ html_widget.suffix|raw }}{% endif %}
     <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
-    {% if html_widget.preffix is defined %}{{ html_widget.preffix|raw }}{% endif %}
+    {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock field_widget %}
 
@@ -305,6 +305,8 @@
 
 {% block widget_attributes %}
 {% spaceless %}
+    {% unset html_widget.prefix %}
+    {% unset html_widget.suffix %}
     id="{{ id }}" name="{{ full_name }}"{% if required %} required="required"{% endif %}{% if max_length %} maxlength="{{ max_length }}"{% endif %}
     {% for attrname,attrvalue in html_widget %}{{attrname}}="{{attrvalue}}" {% endfor %}
 {% endspaceless %}

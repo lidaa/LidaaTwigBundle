@@ -1,14 +1,20 @@
 <?php
 
+/**
+ * This file is part of the LidaaTwigBundle package.
+ */
+
 namespace Lidaa\TwigBundle\Twig;
 
-class TagExtension extends \Twig_Extension {
-
-    public function __construct() {
-        
-    }
-
-    public function getFunctions() {
+/**
+ * TagExtension
+ *
+ * @author Lidaa <aa_dil@hotmail.fr>
+ */
+class TagExtension extends \Twig_Extension
+{
+    public function getFunctions()
+    {
         $fonctions = array();
 
         $fonctions['tag_open'] = new \Twig_Function_Method($this, 'tagOpen', array('pre_escape' => 'html', 'is_safe' => array('html')));
@@ -18,8 +24,8 @@ class TagExtension extends \Twig_Extension {
         return $fonctions;
     }
 
-    public function tagOpen($name, $options = array(), $close = false) {
-
+    public function tagOpen($name, $options = array(), $close = false)
+    {
         if (!$name)
             return '';
 
@@ -28,32 +34,29 @@ class TagExtension extends \Twig_Extension {
             $attributes.= ' ' . $key . '="' . $value . '"';
         }
 
-
         $tag = '<' . $name . $attributes . ($close ? ' />' : '>');
 
         return $tag;
     }
 
-    public function tagClose($name) {
-
+    public function tagClose($name)
+    {
         $tag = '</' . $name . '>';
         return $tag;
     }
 
-    public function tagContent($name, $content, $options=array()) {
-
+    public function tagContent($name, $content, $options=array())
+    {
         $open = $this->tagOpen($name, $options, false);
         $close = $this->tagClose($name);
 
-        $tag = $open .
-                $content .
-                $close;
+        $tag = $open . $content . $close;
 
         return $tag;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return 'tag';
     }
-
 }

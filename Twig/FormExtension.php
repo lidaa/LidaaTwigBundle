@@ -1,12 +1,20 @@
 <?php
 
+/**
+ * This file is part of the LidaaTwigBundle package.
+ */
+
 namespace Lidaa\TwigBundle\Twig;
 
 use Symfony\Component\Form\FormView;
 
+/**
+ * FormExtension
+ *
+ * @author Lidaa <aa_dil@hotmail.fr>
+ */
 class FormExtension extends \Twig_Extension
 {
-
     protected $resources;
     protected $blocks;
     protected $environment;
@@ -59,7 +67,7 @@ class FormExtension extends \Twig_Extension
     {
         return $this->render($type, 'widget', $variables);
     }
-    
+
     public function typeErrors(FormView $type, array $variables = array())
     {
         return $this->render($type, 'errors', $variables);
@@ -170,5 +178,4 @@ class FormExtension extends \Twig_Extension
 
         return $blocks;
     }
-
 }

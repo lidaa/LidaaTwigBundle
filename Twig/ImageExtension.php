@@ -1,11 +1,20 @@
 <?php
 
+/**
+ * This file is part of the LidaaTwigBundle package.
+ */
+
 namespace Lidaa\TwigBundle\Twig;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class ImageExtension extends \Twig_Extension {
-
+/**
+ * ImageExtension
+ *
+ * @author Lidaa <aa_dil@hotmail.fr>
+ */
+class ImageExtension extends \Twig_Extension
+{
     private $container;
 
     public function __construct(ContainerInterface $container)
@@ -13,7 +22,8 @@ class ImageExtension extends \Twig_Extension {
         $this->container = $container;
     }
 
-    public function getFunctions() {
+    public function getFunctions()
+    {
         $fonctions = array();
 
         $fonctions['img_path'] = new \Twig_Function_Method($this, 'imgPath', array('pre_escape' => 'html', 'is_safe' => array('html')));
@@ -22,13 +32,13 @@ class ImageExtension extends \Twig_Extension {
         return $fonctions;
     }
 
-    public function imgPath() {
-
+    public function imgPath()
+    {
         return '';
     }
 
-    public function imgTag($path, $options = array()) {
-        
+    public function imgTag($path, $options = array())
+    {
         $packageName = null;
         $src = $this->container->get('templating.helper.assets')->getUrl($path, $packageName);
 
@@ -37,11 +47,11 @@ class ImageExtension extends \Twig_Extension {
             $attributes.= ' ' . $key . '="' . $value . '"';
         }
 
-        return '<img src="'. $src .'"'. $attributes . ' />';
+        return '<img src="' . $src . '"' . $attributes . ' />';
     }
 
-    public function getName() {
+    public function getName()
+    {
         return 'image';
     }
-
 }

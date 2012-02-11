@@ -1,11 +1,20 @@
 <?php
 
+/**
+ * This file is part of the LidaaTwigBundle package.
+ */
+
 namespace Lidaa\TwigBundle\Twig;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class JsExtension extends \Twig_Extension {
-
+/**
+ * JsExtension
+ *
+ * @author Lidaa <aa_dil@hotmail.fr>
+ */
+class JsExtension extends \Twig_Extension
+{
     private $container;
 
     public function __construct(ContainerInterface $container)
@@ -13,7 +22,8 @@ class JsExtension extends \Twig_Extension {
         $this->container = $container;
     }
 
-    public function getFunctions() {
+    public function getFunctions()
+    {
         $fonctions = array();
 
         $fonctions['js_path'] = new \Twig_Function_Method($this, 'jsPath', array('pre_escape' => 'html', 'is_safe' => array('html')));
@@ -22,30 +32,29 @@ class JsExtension extends \Twig_Extension {
         return $fonctions;
     }
 
-    public function jsPath() {
-
+    public function jsPath()
+    {
         return '';
     }
 
-    public function jsTag($path, $options = array()) {
-        
+    public function jsTag($path, $options = array())
+    {
         $packageName = null;
         $src = $this->container->get('templating.helper.assets')->getUrl($path, $packageName);
 
-        
-        if(!key_exists('type', $options))
+        if (!key_exists('type', $options))
             $options['type'] = 'text/javascript';
-        
+
         $attributes = '';
         foreach ($options as $key => $value) {
             $attributes.= ' ' . $key . '="' . $value . '"';
         }
 
-        return '<script src="'. $src .'"'. $attributes . ' ></script>';
+        return '<script src="' . $src . '"' . $attributes . ' ></script>';
     }
 
-    public function getName() {
+    public function getName()
+    {
         return 'js';
     }
-
 }

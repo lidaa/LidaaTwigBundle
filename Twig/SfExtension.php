@@ -1,19 +1,28 @@
 <?php
 
+/**
+ * This file is part of the LidaaTwigBundle package.
+ */
+
 namespace Lidaa\TwigBundle\Twig;
 
-class SfExtension extends \Twig_Extension {
-
+/**
+ * SfExtension
+ *
+ * @author Lidaa <aa_dil@hotmail.fr>
+ */
+class SfExtension extends \Twig_Extension
+{
     private $app;
 
-    public function initRuntime(\Twig_Environment $environment) {
-
+    public function initRuntime(\Twig_Environment $environment)
+    {
         $globals = $environment->getGlobals();
         $this->app = $globals['app'];
     }
-    
-    public function getFunctions() {
 
+    public function getFunctions()
+    {
         $fonctions = array();
 
         $fonctions['controller_name'] = new \Twig_Function_Method($this, 'controllerName');
@@ -23,49 +32,48 @@ class SfExtension extends \Twig_Extension {
         return $fonctions;
     }
 
-    public function controllerName() {
-        
-        $request = $this->app->getRequest(); 
+    public function controllerName()
+    {
+        $request = $this->app->getRequest();
         $controller = $request->get('_controller');
-        
+
         $controller_name = $this->getControllerName($controller);
-        
+
         return $controller_name;
     }
 
-    public function actionName() {
-        
-        $request = $this->app->getRequest(); 
+    public function actionName()
+    {
+        $request = $this->app->getRequest();
         $controller = $request->get('_controller');
-        
+
         $action_name = $this->getActionName($controller);
-        
+
         return $action_name;
     }
 
-    public function getEnv(){
-        
+    public function getEnv()
+    {
         return $this->app->getEnvironment();
     }
-    
-    private function getControllerName($controller) {
-        
+
+    private function getControllerName($controller)
+    {
         $tab_infos = explode('::', $controller);
         $contr_infos = explode('\\', $tab_infos[0]);
-        
-        return array_pop($contr_infos);        
+
+        return array_pop($contr_infos);
     }
-    
-    private function getActionName($controller) {
-        
+
+    private function getActionName($controller)
+    {
         $tab_infos = explode('::', $controller);
-        
+
         return $tab_infos[1];
     }
-    
-    public function getName() {
 
+    public function getName()
+    {
         return 'sf';
     }
-
 }

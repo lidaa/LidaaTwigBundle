@@ -64,7 +64,7 @@ Extensions:
 
 	- UnsetExtension (see documentation : /Resources/doc/unset) 
 
-	- formExtension (see documentation : /Resources/doc/form)
+	- FormExtension (see documentation : /Resources/doc/form)
 
 TODO:
 ============

@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * This file is part of the LidaaTwigBundle package.
+ * 
+ * This is the class that loads and manages your bundle configuration
+ *
+ * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
+ */
+
 namespace Lidaa\TwigBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -8,9 +16,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
- * This is the class that loads and manages your bundle configuration
+ * LidaaTwigExtension
  *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
+ * @author Lidaa <aa_dil@hotmail.fr>
  */
 class LidaaTwigExtension extends Extension
 {
@@ -27,6 +35,5 @@ class LidaaTwigExtension extends Extension
         $loader->load('form.xml');
         
         $container->setParameter('lidaa.twig.form.resources', $config['form']['resources']);
-        
     }
 }

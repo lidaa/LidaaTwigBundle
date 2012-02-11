@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * This file is part of the LidaaTwigBundle package.
+ * 
+ * This is the class that validates and merges configuration from your app/config files
+ *
+ * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
+ */
+
 namespace Lidaa\TwigBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -7,9 +15,9 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 /**
- * This is the class that validates and merges configuration from your app/config files
+ * Configuration
  *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
+ * @author Lidaa <aa_dil@hotmail.fr>
  */
 class Configuration implements ConfigurationInterface
 {
@@ -26,6 +34,10 @@ class Configuration implements ConfigurationInterface
         return $treeBuilder;
     }
     
+    /**
+     * addFormSection
+     * @param ArrayNodeDefinition $rootNode
+     */
     private function addFormSection(ArrayNodeDefinition $rootNode)
     {
         $rootNode

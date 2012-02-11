@@ -347,6 +347,6 @@
 {% spaceless %}
     {% set tag = html_options.tag|default('') %}
     {{ tag_close(tag) }}
-    {% if html_options.prefix is defined %}{{ html_options.prefix|raw }}mm{% endif %}
+    {% if html_options.prefix is defined %}{{ html_options.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock widget_close_tag %}

@@ -338,6 +338,7 @@
     {% set tag = html_options.tag|default('') %}
     {% unset html_options.tag %}
     {% unset html_options.display_mode %}
+    {% unset html_options.prefix %}
     {{ tag_open(tag, html_options) }}
 {% endspaceless %}
 {% endblock widget_open_tag %}
@@ -346,6 +347,6 @@
 {% spaceless %}
     {% set tag = html_options.tag|default('') %}
     {{ tag_close(tag) }}
-    {% if html_options.preffix is defined %}{{ html_options.preffix|raw }}{% endif %}
+    {% if html_options.prefix is defined %}{{ html_options.prefix|raw }}mm{% endif %}
 {% endspaceless %}
 {% endblock widget_close_tag %}

@@ -16,6 +16,8 @@
             <parameter key="lidaa.twig.extension.sf.class">Lidaa\TwigBundle\Twig\SfExtension</parameter>
             <parameter key="lidaa.twig.extension.form.class">Lidaa\TwigBundle\Twig\FormExtension</parameter>
             <parameter key="lidaa.twig.extension.unset.class">Lidaa\TwigBundle\Twig\UnsetExtension</parameter>
+            <parameter key="lidaa.twig.extension.html.class">Lidaa\TwigBundle\Twig\HtmlExtension</parameter>
+            <parameter key="lidaa.twig.helperfactory.class">Lidaa\TwigBundle\Helper\HelperFactory</parameter>
     </parameters>
         
     <services>
@@ -67,6 +69,15 @@
         
         <service id="lidaa.twig.extension.unset" class="%lidaa.twig.extension.unset.class%">
           <tag name="twig.extension" />
+        </service> 
+
+        <service id="lidaa.twig.helper_factory" class="%lidaa.twig.helperfactory.class%"> 
+        	<argument type="service" id="service_container" />
+        </service>
+        
+        <service id="lidaa.twig.extension.html" class="%lidaa.twig.extension.html.class%">
+          <tag name="twig.extension" />
+          <argument type="service" id="lidaa.twig.helper_factory" />
         </service> 
         
     </services>

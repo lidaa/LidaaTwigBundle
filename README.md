@@ -1,4 +1,5 @@
 Provides a lot of Twig Extensions.
+(php, image, url, css, js, tag, session, number, sf, unset, form, html, ...)
 
 Requirement
 ============
@@ -66,8 +67,11 @@ Extensions:
 
 	- FormExtension (see documentation : /Resources/doc/form)
 
+	- HtmlExtension (see documentation : /Resources/doc/html)
+
 TODO:
 ============
+- Add TextExtension
 - Add ajax and highligh to JsExtension
 - Format a number according to language in NumberExtension
 - Tests

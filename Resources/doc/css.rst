@@ -1,13 +1,11 @@
 
-Generate the tag "link" with options passed as parameters, attribute 'type'='text/css' if isn't specified
-
 ::
 
  css_tag($path, $options)
 
+Generate the tag "link" with options passed as parameters, attribute 'type'='text/css' if isn't specified
 
-Example:
--------
+**Example:**
 
 ::
 

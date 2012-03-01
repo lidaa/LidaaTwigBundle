@@ -1,15 +1,17 @@
+::
 
-// Convert a number to a percent
+	{{ to_percent($number) }}
 
-{{ to_percent($number) }}
+Convert a number to a percent
 
+**Example:**
 
-Example:
-=======
+::
 
-	
-{{ to_percent(265) }}
+	{{ to_percent(265) }}
 
 => 
 
-2.65%
+::
+
+	2.65%

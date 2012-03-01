@@ -30,8 +30,7 @@ Returns a charset META-tag.
 $charset : The character set to be used in the meta tag. If empty, "utf-8" will be used.
 
 
-Example:
--------
+**Example:**
 
 - Create a Builder class
 first create a new class in the "Crumbs" directory of one of your bundles. This class - called Builder in our example - will have one method for each breadcrumbs that you need to build.

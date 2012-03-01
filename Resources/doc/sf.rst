@@ -1,40 +1,34 @@
 
-// Returns the controller name.
+::
 
-controller_name()
+  controller_name()
 
+Returns the controller name.
 
-// Returns the action name.
+::
 
-action_name()
+  action_name()
 
+Returns the action name.
 
-// Returns the environment ('dev', 'prod', ...).
+::
 
-get_env()
+  get_env()
 
-
-Example:
-=======
-
-
-{{ controller_name() }}  
-
-=> 
-
-DefaultController
+Returns the environment ('dev', 'prod', ...).
 
 
-{{ action_name() }}  
+**Example:**
 
-=> 
+::
 
-indexAction
+  {{ controller_name() }}  => DefaultController
 
+::
 
-{{ get_env() }}  
+  {{ action_name() }}  => indexAction
 
-=> 
+::
 
-dev
+  {{ get_env() }}  => dev
 

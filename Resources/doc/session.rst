@@ -1,61 +1,71 @@
 
+::
 
-// Starts the session storage.
+  session_start()
 
-session_start()
-
-
-// Checks if an attribute is defined.
-
-session_has($name)
+Starts the session storage.
 
 
-// Returns an attribute.
+::
 
-session_get($name, $default = null)
+  session_has($name)
+
+Checks if an attribute is defined.
+
+::
+
+  session_get($name, $default = null)
+
+Returns an attribute.
+
+::
+
+  session_all()
+
+Returns attributes.
+
+::
+
+  session_locale()
+
+Returns the locale
+
+::
+
+  session_id()
+
+Returns the session ID
+
+::
+
+  session_flash($name, $default = null)
+
+Gets a flash message.
 
 
-// Returns attributes.
+::
 
-session_all()
+  session_regenerate($destroy = false)
 
-
-// Returns the locale
-
-session_locale()
+Migrates the current session to a new session id while maintaining all session attributes ($destroy = false).
 
 
-// Returns the session ID
+**Example:**
 
-session_id()
+::
 
-
-// Gets a flash message.
-
-session_flash($name, $default = null)
-
-
-// Migrates the current session to a new session id while maintaining all session attributes ($destroy = false).
-
-session_regenerate($destroy = false)
-
-
-Example:
-=======
-
-
-{{ session_start() }}
-
-{{ session_has('attributename') }}
-
-{{ session_get('attributename', 'defaultvalue') }}
-
-{{ session_all() }}
-
-{{ session_locale() }}
-
-{{ session_id() }}
-
-{{ session_flash('flashname', 'defaultvalue') }}
-
-{{ session_regenerate(false) }}
+  {{ session_start() }}
+  
+  {{ session_has('attributename') }}
+  
+  {{ session_get('attributename', 'defaultvalue') }}
+  
+  {{ session_all() }}
+  
+  {{ session_locale() }}
+  
+  {{ session_id() }}
+  
+  {{ session_flash('flashname', 'defaultvalue') }}
+  
+  {{ session_regenerate(false) }}

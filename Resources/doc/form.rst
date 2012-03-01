@@ -1,4 +1,3 @@
-
 ::
 
   type_widget(type, options)
@@ -35,11 +34,9 @@ Renders any errors global to the whole form (field-specific errors are displayed
 
 -------------------------------------------------------
 
-Example 1:
----------
+**Example 1:**
 
-In your controller :
--------------------
+1.In your controller :
 
 ::
 
@@ -53,8 +50,7 @@ In your controller :
     }
 
 
-In your twig template :
----------------------- 
+2. In your twig template :
 
 ::
 
@@ -63,10 +59,7 @@ In your twig template :
       <input type="submit" />
     </form>
 
-
-Result:
-------
-
+3. Result:
 
 ::
 
@@ -77,14 +70,11 @@ Result:
     </div>
     <b>prefix</b>
 
-
 -------------------------------------------------------
 
-Example 2:
----------
+**Example 2:**
 
-In your controller :
--------------------
+1. In your controller :
 
 ::
 
@@ -106,8 +96,7 @@ In your controller :
     }
 
 
-In your twig template :
----------------------- 
+2. In your twig template :
 
 ::
 
@@ -116,10 +105,7 @@ In your twig template :
       <input type="submit" />
     </form>
 
-
-Result:
-------
-
+3. Result:
 
 ::
 

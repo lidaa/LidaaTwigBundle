@@ -42,32 +42,33 @@ Installation
 		 //...
 	));
 
+
 Extensions:
 ============
 
-	- PhpExtension (see documentation : /Resources/doc/php)
+- PhpExtension (see documentation : [/Resources/doc/php](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/php.rst))
 
-	- ImageExtension (see documentation : /Resources/doc/image)
+- ImageExtension (see documentation : [/Resources/doc/image](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/image.rst))
 
-	- UrlExtension (see documentation : /Resources/doc/url)
+- UrlExtension (see documentation : [/Resources/doc/url](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/url.rst))
 
-	- CssExtension (see documentation : /Resources/doc/css)
+- CssExtension (see documentation : [/Resources/doc/css](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/css.rst))
 
-	- JsExtension (see documentation : /Resources/doc/js)
+- JsExtension (see documentation : [/Resources/doc/js](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/js.rst))
 
-	- TagExtension (see documentation : /Resources/doc/tag)
+- TagExtension (see documentation : [/Resources/doc/tag](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/tag.rst))
 
-	- SessionExtension (see documentation : /Resources/doc/session)
+- SessionExtension (see documentation : [/Resources/doc/session](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/session.rst))
 
-	- NumberExtension (see documentation : /Resources/doc/number)
+- NumberExtension (see documentation : [/Resources/doc/number](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/number.rst))
 
-	- SfExtension (see documentation : /Resources/doc/sf)
+- SfExtension (see documentation : [/Resources/doc/sf](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/sf.rst))
 
-	- UnsetExtension (see documentation : /Resources/doc/unset) 
+- UnsetExtension (see documentation : [/Resources/doc/unset](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/unset.rst))
 
-	- FormExtension (see documentation : /Resources/doc/form)
+- FormExtension (see documentation : [/Resources/doc/form](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/css.rst))
 
-	- HtmlExtension (see documentation : /Resources/doc/html)
+- HtmlExtension (see documentation : [/Resources/doc/html](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/html.rst))
 
 TODO:
 ============

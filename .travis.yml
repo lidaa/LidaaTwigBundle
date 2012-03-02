@@ -1,0 +1,10 @@
+language: php
+
+php:
+  - 5.3
+  
+env:
+  - SYMFONY_VERSION=v2.0.9
+  - SYMFONY_VERSION=v2.0.10
+  
+before_script: php vendor/vendors.php

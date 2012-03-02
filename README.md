@@ -75,7 +75,6 @@ TODO:
 - Add TextExtension
 - Add ajax and highligh to JsExtension
 - Format a number according to language in NumberExtension
-- Tests
 
 
 

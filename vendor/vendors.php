@@ -1,36 +1,36 @@
-#!/usr/bin/env php
 <?php
+#!/usr/bin/env php
 
 set_time_limit(0);
 
 if (isset($argv[1])) {
-    $_SERVER['SYMFONY_VERSION'] = $argv[1];
+	$_SERVER['SYMFONY_VERSION'] = $argv[1];
 }
 
 $vendorDir = __DIR__;
 $deps = array(
-    array('symfony', 'git://github.com/symfony/symfony', isset($_SERVER['SYMFONY_VERSION']) ? $_SERVER['SYMFONY_VERSION'] : 'origin/master',)
-    array('twig', 'git://github.com/fabpot/Twig.git', 'origin/master',)
-    array('twig_Extensions', 'http://github.com/fabpot/Twig-extensions.git', 'origin/master',)
-	);
+array('symfony', 'git://github.com/symfony/symfony.git', isset($_SERVER['SYMFONY_VERSION']) ? $_SERVER['SYMFONY_VERSION'] : 'origin/master'),
+array('twig', 'git://github.com/fabpot/Twig.git', 'origin/master'),
+array('twig_Extensions', 'http://github.com/fabpot/Twig-extensions.git', 'origin/master')
+);
 
 foreach ($deps as $dep) {
-    list($name, $url, $rev) = $dep;
+	list($name, $url, $rev) = $dep;
 
-    echo "> Installing/Updating $name\n";
+	echo "> Installing/Updating $name\n";
 
-    $installDir = $vendorDir.'/'.$name;
-    if (!is_dir($installDir)) {
-        $return = null;
-        system(sprintf('git clone -q %s %s', escapeshellarg($url), escapeshellarg($installDir)), $return);
-        if ($return > 0) {
-            exit($return);
-        }
-    }
+	$installDir = $vendorDir.'/'.$name;
+	if (!is_dir($installDir)) {
+	$return = null;
+		system(sprintf('git clone -q %s %s', escapeshellarg($url), escapeshellarg($installDir)), $return);
+		if ($return > 0) {
+		exit($return);
+	}
+	}
 
-    $return = null;
-    system(sprintf('cd %s && git fetch -q origin && git reset --hard %s', escapeshellarg($installDir), escapeshellarg($rev)), $return);
-    if ($return > 0) {
-        exit($return);
-    }
+		$return = null;
+		system(sprintf('cd %s && git fetch -q origin && git reset --hard %s', escapeshellarg($installDir), escapeshellarg($rev)), $return);
+		if ($return > 0) {
+		exit($return);
+}
 }

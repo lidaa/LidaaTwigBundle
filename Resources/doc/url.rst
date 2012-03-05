@@ -47,3 +47,13 @@ in routing file:
     =>
     
     <a href='#' class='demo'>title</a>
+
+---------------------------
+
+::
+
+    {{ link_to_if(is_granted('ROLE_ADMIN'), 'delete', {'class':'demo', 'href':'#'}) }}
+    
+    => (if is ADMIN)
+    
+    <a href='#' class='demo'>delete</a>

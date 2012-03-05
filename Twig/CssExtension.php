@@ -6,7 +6,7 @@
 
 namespace Lidaa\TwigBundle\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Lidaa\TwigBundle\Helper\HelperFactoryInterface;
 
 /**
  * CssExtension
@@ -15,11 +15,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class CssExtension extends \Twig_Extension
 {
-    private $container;
-
-    public function __construct(ContainerInterface $container)
+    private $helper;
+    
+    public function __construct(HelperFactoryInterface $helper)
     {
-        $this->container = $container;
+        $this->helper = $helper('css');
     }
 
     public function getFunctions()
@@ -39,18 +39,7 @@ class CssExtension extends \Twig_Extension
 
     public function cssTag($path, $options = array())
     {
-        $packageName = null;
-        $src = $this->container->get('templating.helper.assets')->getUrl($path, $packageName);
-
-        if (!key_exists('type', $options))
-            $options['type'] = 'text/css';
-
-        $attributes = '';
-        foreach ($options as $key => $value) {
-            $attributes.= ' ' . $key . '="' . $value . '"';
-        }
-
-        return '<link href="' . $src . '"' . $attributes . ' />';
+	return $this->helper->renderCssTag($path, $options);
     }
 
     public function getName()

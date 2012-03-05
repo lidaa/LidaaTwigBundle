@@ -6,7 +6,7 @@
 
 namespace Lidaa\TwigBundle\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Lidaa\TwigBundle\Helper\HelperFactoryInterface;
 
 /**
  * ImageExtension
@@ -15,11 +15,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class ImageExtension extends \Twig_Extension
 {
-    private $container;
-
-    public function __construct(ContainerInterface $container)
+    private $helper;
+    
+    public function __construct(HelperFactoryInterface $helper)
     {
-        $this->container = $container;
+        $this->helper = $helper('image');
     }
 
     public function getFunctions()
@@ -39,15 +39,7 @@ class ImageExtension extends \Twig_Extension
 
     public function imgTag($path, $options = array())
     {
-        $packageName = null;
-        $src = $this->container->get('templating.helper.assets')->getUrl($path, $packageName);
-
-        $attributes = '';
-        foreach ($options as $key => $value) {
-            $attributes.= ' ' . $key . '="' . $value . '"';
-        }
-
-        return '<img src="' . $src . '"' . $attributes . ' />';
+        return $this->helper->renderImgTag($path, $options);
     }
 
     public function getName()

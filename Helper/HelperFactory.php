@@ -25,9 +25,19 @@ class HelperFactory implements HelperFactoryInterface
 
     public function getHelper($class)
     {
+    	$object = __NAMESPACE__.'\\'.$class;
+    	
         switch ($class) {
             case 'HtmlHelper':
-                return new HtmlHelper($this->container->get('kernel'), $this->container->get('translator'), $this->container->get('router'));
+                return new $object($this->container->get('kernel'), $this->container->get('translator'), $this->container->get('router'));
+            
+            case 'CssHelper':
+			case 'ImageHelper':
+			case 'JsHelper':				
+               	return new $object($this->container->get('templating.helper.assets'));
+               	
+			case 'UrlHelper':
+            	return new $object($this->container->get('router'));
         }
     }
 

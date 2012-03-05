@@ -6,7 +6,7 @@
 
 namespace Lidaa\TwigBundle\Twig;
 
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Lidaa\TwigBundle\Helper\HelperFactoryInterface;
 
 /**
  * UrlExtension
@@ -15,13 +15,13 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
  */
 class UrlExtension extends \Twig_Extension
 {
-    private $generator;
-
-    public function __construct(UrlGeneratorInterface $generator)
+    private $helper;
+    
+    public function __construct(HelperFactoryInterface $helper)
     {
-        $this->generator = $generator;
+    	$this->helper = $helper('url');
     }
-
+    
     public function getFunctions()
     {
         $fonctions = array();
@@ -34,46 +34,17 @@ class UrlExtension extends \Twig_Extension
 
     public function linkTo($title, $name, $parameters = array(), $options = array())
     {
-        $url = $this->generator->generate($name, $parameters);
-
-        $attributes = '';
-        foreach ($options as $key => $value) {
-            $attributes.= ' ' . $key . '="' . $value . '"';
-        }
-
-        return '<a href="' . $url . '"' . $attributes . '>' . $title . '</a>';
+        return $this->helper->renderLinkTo($title, $name, $parameters, $options);
     }
 
     public function linkToIf($condition, $title, $options = array())
     {
-        if (!$condition)
-            return '';
-
-        if (!key_exists('href', $options))
-            $options['href'] = '#';
-
-        $attributes = '';
-        foreach ($options as $key => $value) {
-            $attributes.= ' ' . $key . '="' . $value . '"';
-        }
-
-        return '<a' . $attributes . '>' . $title . '</a>';
+        return $this->helper->renderLinkToggle('if', $condition, $title, $options);
     }
 
     public function linkToUnless($condition, $title, $options = array())
     {
-        if ($condition)
-            return '';
-
-        if (!key_exists('href', $options))
-            $options['href'] = '#';
-
-        $attributes = '';
-        foreach ($options as $key => $value) {
-            $attributes.= ' ' . $key . '="' . $value . '"';
-        }
-
-        return '<a' . $attributes . '>' . $title . '</a>';
+    	return $this->helper->renderLinkToggle('unless', $condition, $title, $options);    	
     }
 
     public function getName()

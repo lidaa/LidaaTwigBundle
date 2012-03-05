@@ -21,10 +21,14 @@
     </parameters>
         
     <services>
+    
+        <service id="lidaa.twig.helper_factory" class="%lidaa.twig.helperfactory.class%"> 
+        	<argument type="service" id="service_container" />
+        </service>
 
         <service id="lidaa.twig.extension.url" class="%lidaa.twig.extension.url.class%">
           <tag name="twig.extension" />
-          <argument type="service" id="router" />
+          <argument type="service" id="lidaa.twig.helper_factory" />
         </service>
 
         <service id="lidaa.twig.extension.php" class="%lidaa.twig.extension.php.class%">
@@ -33,7 +37,7 @@
         
         <service id="lidaa.twig.extension.image" class="%lidaa.twig.extension.image.class%">
           <tag name="twig.extension" />
-            <argument type="service" id="service_container" />
+          <argument type="service" id="lidaa.twig.helper_factory" />
         </service>
         
         <service id="lidaa.twig.extension.tag" class="%lidaa.twig.extension.tag.class%">
@@ -42,12 +46,12 @@
         
         <service id="lidaa.twig.extension.css" class="%lidaa.twig.extension.css.class%">
           <tag name="twig.extension" />
-            <argument type="service" id="service_container" />
+          <argument type="service" id="lidaa.twig.helper_factory" />
         </service>
         
         <service id="lidaa.twig.extension.js" class="%lidaa.twig.extension.js.class%">
           <tag name="twig.extension" />
-            <argument type="service" id="service_container" />
+          <argument type="service" id="lidaa.twig.helper_factory" />
         </service>
 
         <service id="lidaa.twig.extension.session" class="%lidaa.twig.extension.session.class%">
@@ -69,10 +73,6 @@
         
         <service id="lidaa.twig.extension.unset" class="%lidaa.twig.extension.unset.class%">
           <tag name="twig.extension" />
-        </service> 
-
-        <service id="lidaa.twig.helper_factory" class="%lidaa.twig.helperfactory.class%"> 
-        	<argument type="service" id="service_container" />
         </service>
         
         <service id="lidaa.twig.extension.html" class="%lidaa.twig.extension.html.class%">

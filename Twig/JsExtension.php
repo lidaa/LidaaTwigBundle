@@ -6,7 +6,7 @@
 
 namespace Lidaa\TwigBundle\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Lidaa\TwigBundle\Helper\HelperFactoryInterface;
 
 /**
  * JsExtension
@@ -15,11 +15,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class JsExtension extends \Twig_Extension
 {
-    private $container;
-
-    public function __construct(ContainerInterface $container)
+    private $helper;
+    
+    public function __construct(HelperFactoryInterface $helper)
     {
-        $this->container = $container;
+        $this->helper = $helper('js');
     }
 
     public function getFunctions()
@@ -39,18 +39,7 @@ class JsExtension extends \Twig_Extension
 
     public function jsTag($path, $options = array())
     {
-        $packageName = null;
-        $src = $this->container->get('templating.helper.assets')->getUrl($path, $packageName);
-
-        if (!key_exists('type', $options))
-            $options['type'] = 'text/javascript';
-
-        $attributes = '';
-        foreach ($options as $key => $value) {
-            $attributes.= ' ' . $key . '="' . $value . '"';
-        }
-
-        return '<script src="' . $src . '"' . $attributes . ' ></script>';
+		return $this->helper->renderJsTag($path, $options);
     }
 
     public function getName()

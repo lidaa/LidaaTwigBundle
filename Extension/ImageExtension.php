@@ -44,6 +44,6 @@ class ImageExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'image';
+        return 'lidaa.image';
     }
 }

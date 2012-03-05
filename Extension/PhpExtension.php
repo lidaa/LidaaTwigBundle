@@ -32,6 +32,6 @@ class PhpExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'php';
+        return 'lidaa.php';
     }
 }

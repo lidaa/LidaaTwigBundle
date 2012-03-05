@@ -57,6 +57,6 @@ class TagExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'tag';
+        return 'lidaa.tag';
     }
 }

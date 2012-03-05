@@ -74,6 +74,6 @@ class SfExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'sf';
+        return 'lidaa.sf';
     }
 }

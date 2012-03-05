@@ -44,6 +44,6 @@ class JsExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'js';
+        return 'lidaa.js';
     }
 }

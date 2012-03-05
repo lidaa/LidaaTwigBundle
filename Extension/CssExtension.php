@@ -44,6 +44,6 @@ class CssExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'css';
+        return 'lidaa.css';
     }
 }

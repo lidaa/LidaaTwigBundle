@@ -24,6 +24,6 @@ class UnsetExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'unset';
+        return 'lidaa.unset';
     }
 }

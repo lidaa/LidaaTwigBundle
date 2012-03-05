@@ -82,6 +82,6 @@ class SessionExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'session';
+        return 'lidaa.session';
     }
 }

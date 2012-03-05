@@ -52,6 +52,6 @@ class NumberExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'number';
+        return 'lidaa.number';
     }
 }

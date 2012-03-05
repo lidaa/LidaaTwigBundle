@@ -4,7 +4,7 @@
  * This file is part of the LidaaTwigBundle package.
  */
 
-namespace Lidaa\TwigBundle\Twig\Node;
+namespace Lidaa\TwigBundle\Node;
 
 /**
  * UnsetNode

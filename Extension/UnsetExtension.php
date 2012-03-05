@@ -4,9 +4,9 @@
  * This file is part of the LidaaTwigBundle package.
  */
 
-namespace Lidaa\TwigBundle\Twig;
+namespace Lidaa\TwigBundle\Extension;
 
-use Lidaa\TwigBundle\Twig\TokenParser\UnsetTokenParser;
+use Lidaa\TwigBundle\TokenParser\UnsetTokenParser;
 
 /**
  * UnsetExtension

@@ -4,7 +4,7 @@
  * This file is part of the LidaaTwigBundle package.
  */
 
-namespace Lidaa\TwigBundle\Twig;
+namespace Lidaa\TwigBundle\Extension;
 
 use Lidaa\TwigBundle\Helper\HelperFactoryInterface;
 
@@ -39,7 +39,7 @@ class CssExtension extends \Twig_Extension
 
     public function cssTag($path, $options = array())
     {
-	return $this->helper->renderCssTag($path, $options);
+		return $this->helper->renderCssTag($path, $options);
     }
 
     public function getName()

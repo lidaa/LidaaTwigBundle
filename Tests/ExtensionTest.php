@@ -27,18 +27,18 @@ class ExtensionTest extends WebTestCase
     	
     	$this->assertContains('LidaaTwigBundle:Form:form_layout.html.twig', $container->getParameter('lidaa.twig.form.resources'));
     	
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\UrlExtension', $container->getParameter('lidaa.twig.extension.url.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\PhpExtension', $container->getParameter('lidaa.twig.extension.php.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\ImageExtension', $container->getParameter('lidaa.twig.extension.image.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\TagExtension', $container->getParameter('lidaa.twig.extension.tag.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\CssExtension', $container->getParameter('lidaa.twig.extension.css.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\JsExtension', $container->getParameter('lidaa.twig.extension.js.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\SessionExtension', $container->getParameter('lidaa.twig.extension.session.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\NumberExtension', $container->getParameter('lidaa.twig.extension.number.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\SfExtension', $container->getParameter('lidaa.twig.extension.sf.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\FormExtension', $container->getParameter('lidaa.twig.extension.form.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\UnsetExtension', $container->getParameter('lidaa.twig.extension.unset.class'));
-    	$this->assertEquals('Lidaa\TwigBundle\Twig\HtmlExtension', $container->getParameter('lidaa.twig.extension.html.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\UrlExtension', $container->getParameter('lidaa.twig.extension.url.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\PhpExtension', $container->getParameter('lidaa.twig.extension.php.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\ImageExtension', $container->getParameter('lidaa.twig.extension.image.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\TagExtension', $container->getParameter('lidaa.twig.extension.tag.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\CssExtension', $container->getParameter('lidaa.twig.extension.css.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\JsExtension', $container->getParameter('lidaa.twig.extension.js.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\SessionExtension', $container->getParameter('lidaa.twig.extension.session.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\NumberExtension', $container->getParameter('lidaa.twig.extension.number.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\SfExtension', $container->getParameter('lidaa.twig.extension.sf.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\FormExtension', $container->getParameter('lidaa.twig.extension.form.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\UnsetExtension', $container->getParameter('lidaa.twig.extension.unset.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\HtmlExtension', $container->getParameter('lidaa.twig.extension.html.class'));
     	$this->assertEquals('Lidaa\TwigBundle\Helper\HelperFactory', $container->getParameter('lidaa.twig.helperfactory.class'));
     	$this->assertEquals('Lidaa\TwigBundle\Form\Type\FieldType', $container->getParameter('lidaa.form.type.field.class'));
     	 

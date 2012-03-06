@@ -5,18 +5,18 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-            <parameter key="lidaa.twig.extension.url.class">Lidaa\TwigBundle\Twig\UrlExtension</parameter>
-            <parameter key="lidaa.twig.extension.php.class">Lidaa\TwigBundle\Twig\PhpExtension</parameter>
-            <parameter key="lidaa.twig.extension.image.class">Lidaa\TwigBundle\Twig\ImageExtension</parameter>
-            <parameter key="lidaa.twig.extension.tag.class">Lidaa\TwigBundle\Twig\TagExtension</parameter>
-            <parameter key="lidaa.twig.extension.css.class">Lidaa\TwigBundle\Twig\CssExtension</parameter>
-            <parameter key="lidaa.twig.extension.js.class">Lidaa\TwigBundle\Twig\JsExtension</parameter>
-            <parameter key="lidaa.twig.extension.session.class">Lidaa\TwigBundle\Twig\SessionExtension</parameter>
-            <parameter key="lidaa.twig.extension.number.class">Lidaa\TwigBundle\Twig\NumberExtension</parameter>
-            <parameter key="lidaa.twig.extension.sf.class">Lidaa\TwigBundle\Twig\SfExtension</parameter>
-            <parameter key="lidaa.twig.extension.form.class">Lidaa\TwigBundle\Twig\FormExtension</parameter>
-            <parameter key="lidaa.twig.extension.unset.class">Lidaa\TwigBundle\Twig\UnsetExtension</parameter>
-            <parameter key="lidaa.twig.extension.html.class">Lidaa\TwigBundle\Twig\HtmlExtension</parameter>
+            <parameter key="lidaa.twig.extension.url.class">Lidaa\TwigBundle\Extension\UrlExtension</parameter>
+            <parameter key="lidaa.twig.extension.php.class">Lidaa\TwigBundle\Extension\PhpExtension</parameter>
+            <parameter key="lidaa.twig.extension.image.class">Lidaa\TwigBundle\Extension\ImageExtension</parameter>
+            <parameter key="lidaa.twig.extension.tag.class">Lidaa\TwigBundle\Extension\TagExtension</parameter>
+            <parameter key="lidaa.twig.extension.css.class">Lidaa\TwigBundle\Extension\CssExtension</parameter>
+            <parameter key="lidaa.twig.extension.js.class">Lidaa\TwigBundle\Extension\JsExtension</parameter>
+            <parameter key="lidaa.twig.extension.session.class">Lidaa\TwigBundle\Extension\SessionExtension</parameter>
+            <parameter key="lidaa.twig.extension.number.class">Lidaa\TwigBundle\Extension\NumberExtension</parameter>
+            <parameter key="lidaa.twig.extension.sf.class">Lidaa\TwigBundle\Extension\SfExtension</parameter>
+            <parameter key="lidaa.twig.extension.form.class">Lidaa\TwigBundle\Extension\FormExtension</parameter>
+            <parameter key="lidaa.twig.extension.unset.class">Lidaa\TwigBundle\Extension\UnsetExtension</parameter>
+            <parameter key="lidaa.twig.extension.html.class">Lidaa\TwigBundle\Extension\HtmlExtension</parameter>
             <parameter key="lidaa.twig.helperfactory.class">Lidaa\TwigBundle\Helper\HelperFactory</parameter>
     </parameters>
         

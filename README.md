@@ -71,12 +71,12 @@ Extensions:
 
 - HtmlExtension (see documentation : [/Resources/doc/html](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/html.rst))
 
+
 TODO:
 ============
+
 - Add TextExtension
 - Add ajax and highligh to JsExtension
-- Format a number according to language in NumberExtension
-
 
 
 

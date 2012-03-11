@@ -60,6 +60,7 @@
 
         <service id="lidaa.twig.extension.number" class="%lidaa.twig.extension.number.class%">
           <tag name="twig.extension" />
+          <argument type="service" id="lidaa.twig.helper_factory" />
         </service>    
 
         <service id="lidaa.twig.extension.sf" class="%lidaa.twig.extension.sf.class%">

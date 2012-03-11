@@ -32,12 +32,15 @@ class HelperFactory implements HelperFactoryInterface
                 return new $class($this->container->get('kernel'), $this->container->get('translator'), $this->container->get('router'));
             
             case 'CssHelper':
-			case 'ImageHelper':
-			case 'JsHelper':				
+            case 'ImageHelper':
+            case 'JsHelper':				
                	return new $class($this->container->get('templating.helper.assets'));
                	
-			case 'UrlHelper':
+            case 'UrlHelper':
             	return new $class($this->container->get('router'));
+
+            case 'NumberHelper':
+                return new $class();
         }
     }
 

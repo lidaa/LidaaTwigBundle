@@ -6,6 +6,8 @@
 
 namespace Lidaa\TwigBundle\Extension;
 
+use Lidaa\TwigBundle\Helper\HelperFactoryInterface;
+
 /**
  * NumberExtension
  *
@@ -13,41 +15,55 @@ namespace Lidaa\TwigBundle\Extension;
  */
 class NumberExtension extends \Twig_Extension
 {
+    private $helper;
+    
+    public function __construct(HelperFactoryInterface $helper)
+    {
+        $this->helper = $helper('number');
+    }
+	
     public function getFunctions()
     {
         $fonctions = array();
 
         $fonctions['to_percent'] = new \Twig_Function_Method($this, 'toPercent');
         $fonctions['to_readable_size'] = new \Twig_Function_Method($this, 'toReadableSize');
+        $fonctions['number_currency'] = new \Twig_Function_Method($this, 'NumberCurrency');
+        $fonctions['number_scientific'] = new \Twig_Function_Method($this, 'NumberScientific');
+        $fonctions['localized_number'] = new \Twig_Function_Method($this, 'localizedNumber');
+        $fonctions['localized_spellout'] = new \Twig_Function_Method($this, 'localizedSpellout');
 
         return $fonctions;
     }
 
-    public function toPercent($number)
+    public function localizedSpellout($number, $locale = null) 
     {
-        $percent = number_format($number / 100, 2);
-
-        if ($number % 100 == 0)
-            $percent = (int) $percent;
-
-        $percent = $percent . '%';
-
-        return $percent;
+    	return $this->helper->localizedSpellout($number, $locale);    	
+    }
+    
+    public function localizedNumber($number, $locale = null)
+    {
+    	return $this->helper->localizedNumber($number, $locale);
+    }
+    
+    public function NumberCurrency($number, $symbol = 'EUR', $locale = null) 
+    {
+    	return $this->helper->NumberCurrency($number, $symbol, $locale);    	
+    }
+    
+    public function NumberScientific($number, $locale = null) 
+    {
+    	return $this->helper->NumberScientific($number, $locale);    	
     }
 
-    public function toReadableSize($number, $type = 'o')
+    public function toPercent($number)
     {
-        switch (strtolower($type)) {
-            case 'k' : $number_readable = $number / 1024;
-                break;
-            case 'm' : $number_readable = $number / (1024 * 1024);
-                break;
-            case 'g' : $number_readable = $number / (1024 * 1024 * 1024);
-                break;
-            default : $number_readable = $number;
-        }
+    	return $this->helper->toPercent($number);
+    }
 
-        return $number_readable;
+    public function toReadableSize($number)
+    {
+        return $this->helper->toReadableSize($number);
     }
 
     public function getName()

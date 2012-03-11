@@ -25,6 +25,7 @@ class UrlExtension extends \Twig_Extension
     public function getFunctions()
     {
         $fonctions = array();
+        
         $fonctions['link_to'] = new \Twig_Function_Method($this, 'linkTo', array('is_safe' => array('html')));
         $fonctions['link_to_if'] = new \Twig_Function_Method($this, 'linkToIf', array('is_safe' => array('html')));
         $fonctions['link_to_unless'] = new \Twig_Function_Method($this, 'linkToUnless', array('is_safe' => array('html')));
@@ -49,6 +50,6 @@ class UrlExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'url';
+        return 'lidaa.url';
     }
 }

@@ -6,7 +6,7 @@ Generates a breadcrumb trail
 
 ::
 
-    htmlDocType($type = 'html5')
+    html_doctype($type = 'html5')
 
 Returns a doctype string.
 

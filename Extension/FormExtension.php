@@ -45,11 +45,12 @@ class FormExtension extends \Twig_Extension
     {
         $fonctions = array();
 
-        $fonctions['type_row'] = new \Twig_Function_Method($this, 'typeRow', array('is_safe' => array('html')));
-        $fonctions['type_label'] = new \Twig_Function_Method($this, 'typeLabel', array('is_safe' => array('html')));
-        $fonctions['type_widget'] = new \Twig_Function_Method($this, 'typeWidget', array('is_safe' => array('html')));
-        $fonctions['type_errors'] = new \Twig_Function_Method($this, 'typeErrors', array('is_safe' => array('html')));
+        $fonctions['type_row']     = new \Twig_Function_Method($this, 'typeRow', array('is_safe' => array('html')));
+        $fonctions['type_label']   = new \Twig_Function_Method($this, 'typeLabel', array('is_safe' => array('html')));
+        $fonctions['type_widget']  = new \Twig_Function_Method($this, 'typeWidget', array('is_safe' => array('html')));
+        $fonctions['type_errors']  = new \Twig_Function_Method($this, 'typeErrors', array('is_safe' => array('html')));
         $fonctions['type_enctype'] = new \Twig_Function_Method($this, 'typeEnctype', array('is_safe' => array('html')));
+	$fonctions['type_rest']    = new \Twig_Function_Method($this, 'typeRest', array('is_safe' => array('html')));
 
         return $fonctions;
     }
@@ -77,6 +78,11 @@ class FormExtension extends \Twig_Extension
     public function typeEnctype(FormView $type, array $variables = array())
     {
         return $this->render($type, 'enctype');
+    }
+
+    public function typeRest(FormView $type, array $variables = array())
+    {
+        return $this->render($type, 'rest', $variables);
     }
 
     public function getName()

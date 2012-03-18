@@ -6,7 +6,7 @@
     {% set html_options = html_row %}
     {{ block('widget_open_tag') }}
         {{ block('field_rows') }}
-        {{ form_rest(form) }}
+        {{ type_rest(form) }}
     {{ block('widget_close_tag') }}
 {% endspaceless %}
 {% endblock form_widget %}
@@ -14,7 +14,7 @@
 {% block collection_widget %}
 {% spaceless %}
     {% if prototype is defined %}
-        {% set attr = attr|merge({'data-prototype': form_row(prototype) }) %}
+        {% set attr = attr|merge({'data-prototype': type_row(prototype) }) %}
     {% endif %}
     {{ block('form_widget') }}
 {% endspaceless %}
@@ -132,7 +132,7 @@
         {{ block('field_widget') }}
     {% else %}
         <div {{ block('widget_container_attributes') }}>
-            {{ form_widget(form.hour, { 'attr': { 'size': '1' } }) }}:{{ form_widget(form.minute, { 'attr': { 'size': '1' } }) }}{% if with_seconds %}:{{ form_widget(form.second, { 'attr': { 'size': '1' } }) }}{% endif %}
+            {{ type_widget(form.hour, { 'attr': { 'size': '1' } }) }}:{{ type_widget(form.minute, { 'attr': { 'size': '1' } }) }}{% if with_seconds %}:{{ type_widget(form.second, { 'attr': { 'size': '1' } }) }}{% endif %}
         </div>
     {% endif %}
     {% if html_widget.prefix is defined %}{{ html_widget.prefix|raw }}{% endif %}
@@ -285,7 +285,7 @@
 {% spaceless %}
     {% for child in form %}
         {% if not child.rendered %}
-            {{ form_row(child) }}
+            {{ type_row(child) }}
         {% endif %}
     {% endfor %}
 {% endspaceless %}
@@ -340,3 +340,4 @@
     {% if html_options.prefix is defined %}{{ html_options.prefix|raw }}{% endif %}
 {% endspaceless %}
 {% endblock widget_close_tag %}
+

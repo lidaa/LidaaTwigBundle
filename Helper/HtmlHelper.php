@@ -42,6 +42,10 @@ class HtmlHelper
 
     public function renderCrumbs($path, $variables)
     {
+        if (2 != substr_count($path, ':')) {
+             throw new \InvalidArgumentException("Invalid path '$path'. Expected 'bundle:class:method'");            
+        }
+
         list($bundleName, $className, $methodName) = explode(':', $path);
 
         $crumbs = $this->getCrumbs($bundleName, $className, $methodName, $variables);
@@ -95,6 +99,10 @@ class HtmlHelper
 
         $builder = $this->getBuilder($bundleName, $className);
 
+        if (!method_exists($builder, $methodName)) {
+            throw new \InvalidArgumentException(sprintf('Method "%s" was not found on class "%s"', $methodName, $className));
+        }
+
         $crumbs = $builder->$methodName(new Crumbs(), $variables);
 
         return $crumbs;
@@ -106,6 +114,11 @@ class HtmlHelper
         $bundle = $this->kernel->getBundle($bundleName);
 
         $class = $bundle->getNamespace() . '\\Crumbs\\' . $className;
+
+        if (!class_exists($class)) {
+            throw new \InvalidArgumentException(sprintf('Class "%s" does not exist', $class));
+        }
+
         $builder = new $class();
 
         return $builder;

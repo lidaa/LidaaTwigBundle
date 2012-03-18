@@ -49,6 +49,7 @@ class FormExtension extends \Twig_Extension
         $fonctions['type_label'] = new \Twig_Function_Method($this, 'typeLabel', array('is_safe' => array('html')));
         $fonctions['type_widget'] = new \Twig_Function_Method($this, 'typeWidget', array('is_safe' => array('html')));
         $fonctions['type_errors'] = new \Twig_Function_Method($this, 'typeErrors', array('is_safe' => array('html')));
+        $fonctions['type_enctype'] = new \Twig_Function_Method($this, 'typeEnctype', array('is_safe' => array('html')));
 
         return $fonctions;
     }
@@ -71,6 +72,11 @@ class FormExtension extends \Twig_Extension
     public function typeErrors(FormView $type, array $variables = array())
     {
         return $this->render($type, 'errors', $variables);
+    }
+
+    public function typeEnctype(FormView $type, array $variables = array())
+    {
+        return $this->render($type, 'enctype');
     }
 
     public function getName()

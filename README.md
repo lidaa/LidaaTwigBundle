@@ -75,7 +75,7 @@ Extensions:
 TODO:
 ============
 
-- Add TextExtension
+- Add DateExtension
 - Add ajax and highligh to JsExtension
 
 

@@ -36,7 +36,7 @@ class HelperFactory implements HelperFactoryInterface
             case 'JsHelper':				
                	return new $class($this->container->get('templating.helper.assets'));
                	
-            case 'UrlHelper':
+            case 'LinkHelper':
             	return new $class($this->container->get('router'));
 
             case 'NumberHelper':

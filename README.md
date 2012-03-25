@@ -1,6 +1,6 @@
 Provides a lot of Twig Extensions.
 
-(php, image, url, css, js, tag, session, number, sf, unset, form, html, ...)
+(php, image, link, css, js, tag, session, number, sf, unset, form, html, ...)
 
 Requirement
 ============
@@ -51,7 +51,7 @@ Extensions:
 
 - ImageExtension (see documentation : [/Resources/doc/image](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/image.rst))
 
-- UrlExtension (see documentation : [/Resources/doc/url](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/url.rst))
+- LinkExtension (see documentation : [/Resources/doc/url](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/link.rst))
 
 - CssExtension (see documentation : [/Resources/doc/css](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/css.rst))
 

@@ -9,17 +9,17 @@ namespace Lidaa\TwigBundle\Extension;
 use Lidaa\TwigBundle\Helper\HelperFactoryInterface;
 
 /**
- * UrlExtension
+ * LinkExtension
  *
  * @author Lidaa <aa_dil@hotmail.fr>
  */
-class UrlExtension extends \Twig_Extension
+class LinkExtension extends \Twig_Extension
 {
     private $helper;
     
     public function __construct(HelperFactoryInterface $helper)
     {
-    	$this->helper = $helper('url');
+    	$this->helper = $helper('link');
     }
     
     public function getFunctions()
@@ -50,6 +50,6 @@ class UrlExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'lidaa.url';
+        return 'lidaa.link';
     }
 }

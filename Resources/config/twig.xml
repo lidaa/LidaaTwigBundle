@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-            <parameter key="lidaa.twig.extension.url.class">Lidaa\TwigBundle\Extension\UrlExtension</parameter>
+            <parameter key="lidaa.twig.extension.link.class">Lidaa\TwigBundle\Extension\LinkExtension</parameter>
             <parameter key="lidaa.twig.extension.php.class">Lidaa\TwigBundle\Extension\PhpExtension</parameter>
             <parameter key="lidaa.twig.extension.image.class">Lidaa\TwigBundle\Extension\ImageExtension</parameter>
             <parameter key="lidaa.twig.extension.tag.class">Lidaa\TwigBundle\Extension\TagExtension</parameter>
@@ -27,7 +27,7 @@
         	<argument type="service" id="service_container" />
         </service>
 
-        <service id="lidaa.twig.extension.url" class="%lidaa.twig.extension.url.class%">
+        <service id="lidaa.twig.extension.link" class="%lidaa.twig.extension.link.class%">
           <tag name="twig.extension" />
           <argument type="service" id="lidaa.twig.helper_factory" />
         </service>

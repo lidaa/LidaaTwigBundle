@@ -10,11 +10,11 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 
 /**
- * UrlHelper
+ * LinkHelper
  *
  * @author Lidaa <aa_dil@hotmail.fr>
  */
-class UrlHelper
+class LinkHelper
 {
     private $generator;
 

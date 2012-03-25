@@ -27,7 +27,7 @@ class ExtensionTest extends WebTestCase
     	
     	$this->assertContains('LidaaTwigBundle:Form:form_layout.html.twig', $container->getParameter('lidaa.twig.form.resources'));
     	
-    	$this->assertEquals('Lidaa\TwigBundle\Extension\UrlExtension', $container->getParameter('lidaa.twig.extension.url.class'));
+    	$this->assertEquals('Lidaa\TwigBundle\Extension\LinkExtension', $container->getParameter('lidaa.twig.extension.link.class'));
     	$this->assertEquals('Lidaa\TwigBundle\Extension\PhpExtension', $container->getParameter('lidaa.twig.extension.php.class'));
     	$this->assertEquals('Lidaa\TwigBundle\Extension\ImageExtension', $container->getParameter('lidaa.twig.extension.image.class'));
     	$this->assertEquals('Lidaa\TwigBundle\Extension\TagExtension', $container->getParameter('lidaa.twig.extension.tag.class'));
@@ -62,3 +62,4 @@ class ExtensionTest extends WebTestCase
     	$container->compile();
     }
 }
+

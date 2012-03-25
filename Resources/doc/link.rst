@@ -1,4 +1,3 @@
-
 ::
 
     link_to($title, $route_name, $route_parameters, $options)
@@ -18,6 +17,11 @@ Generates a link if $condition is true
 Generates a link if $condition is false
 
 
+::
+
+    mail_to($email, $title = '', $options = array())
+
+Generates  mailto Link
 
 
 **Example:**
@@ -57,3 +61,13 @@ in routing file:
     => (if is ADMIN)
     
     <a href='#' class='demo'>delete</a>
+
+---------------------------
+
+::
+
+        {{ mail_to('aa_dil@hotmail.fr', 'Contact Me', {'class': 'mail'}) }}
+
+        =>
+
+        <a class="mail" href="mailto:aa_dil@hotmail.fr">Contact Me</a>

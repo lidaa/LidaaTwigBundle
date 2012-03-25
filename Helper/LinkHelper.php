@@ -51,4 +51,19 @@ class LinkHelper
         return '<a' . $attributes . '>' . $title . '</a>';
     }
 
+    public function mailTo($email, $title, $options)
+    {
+        $title = (string) $title;
+
+        if ($title == "") {
+            $title = $email;
+        }
+
+        $attributes = '';
+        foreach ($options as $key => $value) {
+            $attributes.= ' ' . $key . '="' . $value . '"';
+        }
+
+        return '<a href="mailto:' . $email . '"' . $attributes . '>' . $title . '</a>';
+    }
 }

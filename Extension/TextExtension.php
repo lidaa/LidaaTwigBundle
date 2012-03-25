@@ -39,7 +39,7 @@ class TextExtension extends \Twig_Extension
 
     public function ellipsize($str, $max_length, $position = 1, $ellipsis = '&hellip;') 
     {
-    	return $this->helper->ellipsize($str, $max_length, $position, $ellipsis) ;    	
+    	return $this->helper->ellipsize($str, $max_length, $position, $ellipsis);    	
     }
     
     public function getName()

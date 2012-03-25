@@ -15,5 +15,13 @@ use Symfony\Component\Locale\Stub\StubNumberFormatter;
  */
 class TextHelper
 {
-
+    public function highlight($haystack, $string, $color, $tag)
+    {    	
+        $highlight_str = sprintf('<%s style="color: %s">%s</%s>', $tag, $color, $string, $tag);
+    	
+        $haystack = str_replace($string, $highlight_str, $haystack);
+    	
+    	return $haystack;
+    }
 }
+

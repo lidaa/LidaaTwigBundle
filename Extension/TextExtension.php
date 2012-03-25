@@ -25,8 +25,15 @@ class TextExtension extends \Twig_Extension
     public function getFunctions()
     {
         $fonctions = array();
+
+        $fonctions['highlight'] = new \Twig_Function_Method($this, 'highlight', array('is_safe' => array('html')));
         
         return $fonctions;
+    }
+
+    public function highlight($haystack, $string, $color = "#990000", $tag = 'span') 
+    {
+    	return $this->helper->highlight($haystack, $string, $color, $tag);    	
     }
     
     public function getName()
@@ -34,3 +41,4 @@ class TextExtension extends \Twig_Extension
         return 'lidaa.text';
     }
 }
+

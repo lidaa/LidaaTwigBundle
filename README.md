@@ -71,7 +71,7 @@ Extensions:
 
 - HtmlExtension (see documentation : [/Resources/doc/html](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/html.rst))
 
-- TextExtension (see documentation : [/Resources/doc/html](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/text.rst))
+- TextExtension (see documentation : [/Resources/doc/text](https://github.com/lidaa/LidaaTwigBundle/blob/master/Resources/doc/text.rst))
 
 TODO:
 ============

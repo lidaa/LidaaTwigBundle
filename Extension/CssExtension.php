@@ -39,7 +39,7 @@ class CssExtension extends \Twig_Extension
 
     public function cssTag($path, $options = array())
     {
-		return $this->helper->renderCssTag($path, $options);
+	return $this->helper->renderCssTag($path, $options);
     }
 
     public function getName()
@@ -47,3 +47,4 @@ class CssExtension extends \Twig_Extension
         return 'lidaa.css';
     }
 }
+

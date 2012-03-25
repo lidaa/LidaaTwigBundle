@@ -40,6 +40,7 @@ class HelperFactory implements HelperFactoryInterface
             	return new $class($this->container->get('router'));
 
             case 'NumberHelper':
+            case 'TextHelper':
                 return new $class();
         }
     }
@@ -52,4 +53,5 @@ class HelperFactory implements HelperFactoryInterface
     }
 
 }
+
 

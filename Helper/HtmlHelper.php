@@ -78,6 +78,48 @@ class HtmlHelper
         return $tag;
     }
 
+    public function refresh($delay, $url) 
+    {
+        $tag = sprintf('<meta http-equiv="Refresh" content="%d; %s" />', $delay, $url);
+        
+        return $tag;
+    }
+
+    public function renderMeta($name, $content, $options) 
+    {   
+        $attributes = '';
+        foreach ($options as $key => $value) {
+            $attributes.= $key . '="' . $value . '" ';
+        }
+
+        $tag = sprintf('<meta name="%s" content="%s" %s/>', $name, $content, $attributes);
+        
+        return $tag;
+    }
+
+    public function renderObject($uri, $type, $options, $params, $content)
+    {
+        $attributes = '';
+        foreach ($options as $key => $value) {
+            $attributes.= $key . '="' . $value . '" ';
+        }
+
+        $tags_params = '';
+        foreach ($params as $key => $value) {
+            $tags_params.= '<param name="' . $key . '" value="' . $value . '" />';
+        }
+        
+        if(!$tags_params && !$content) {
+            $tag = sprintf('<object data="%s" type="%s" %s/>', $uri, $type, $attributes);
+        
+            return $tag;
+        }
+        
+        $tag = sprintf('<object data="%s" type="%s" %s> %s %s </object>', $uri, $type, $attributes, $tags_params, $content);
+
+        return $tag;
+    }
+
     protected function renderCrumb($crumb)
     {
         $title = $this->translator->trans($crumb[0]);
@@ -125,3 +167,4 @@ class HtmlHelper
     }
 
 }
+

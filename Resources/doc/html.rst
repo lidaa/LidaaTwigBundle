@@ -29,8 +29,38 @@ Returns a charset META-tag.
 
 $charset : The character set to be used in the meta tag. If empty, "utf-8" will be used.
 
+::
 
-**Example:**
+    html_br($nbr = 1)
+
+Generates the tag '<br />' based on the number you submit.
+
+::
+
+    html_nbsp($nbr = 1)
+
+Generates the code of space (&nbsp;) based on the number you submit.
+
+::
+
+    html_meta($name, $content, $options = array())
+
+Generates meta tags.
+
+::
+
+    html_refresh($delay, $url = '')
+
+Generates meta refresh tag.
+
+::
+
+    html_object($uri, $meme_type, $attributes = array(), $params = array(), $content = null)
+
+Generates markup for embedding a custom Object.
+
+
+**Examples:**
 
 - Create a Builder class
 first create a new class in the "Crumbs" directory of one of your bundles. This class - called Builder in our example - will have one method for each breadcrumbs that you need to build.
@@ -104,3 +134,68 @@ You can pass all parameters to use in the method of the Builder in the second ar
 ::
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+----------------------------------
+
+::
+
+    {{  html_br(5) }}
+
+=> 
+
+::
+
+    <br /><br /><br /><br /><br />
+
+----------------------------------
+
+::
+
+    {{  html_nbsp(3) }}
+
+=> 
+
+::
+
+    &nbsp;&nbsp;&nbsp;
+
+----------------------------------
+
+::
+
+    {{  html_meta('description', 'Une description de la page...') }}
+
+=> 
+
+::
+
+    <meta content="Une description de la page..." name="description">
+
+----------------------------------
+
+::
+
+    {{  html_refresh(4) }}
+
+=> 
+
+::
+
+    refresh the page in 4 seconds
+
+----------------------------------
+
+::
+
+    {{  html_object('/path/to/file.ext', 'mime/type', {'attr1': 'aval1', 'attr2': 'aval2'}, {'param1': 'pval1', 'param2': 'pval2'}, 'some content') }}
+
+=> 
+
+::
+
+    <object data="/path/to/file.ext" type="mime/type" attr1="aval1" attr2="aval2">
+        <param name="param1" value="pval1" />
+        <param name="param2" value="pval2" />
+        some content
+    </object>
+

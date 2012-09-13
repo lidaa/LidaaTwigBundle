@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/lidaa/LidaaTwigBundle.png)](http://travis-ci.org/lidaa/LidaaTwigBundle)
+
 Provides a lot of Twig Extensions.
 
 (php, image, link, css, js, tag, session, number, sf, unset, form, html, ...)
